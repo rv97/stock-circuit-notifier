@@ -24,6 +24,7 @@ def get_stock_details(company):
     return message_details
 
 def post_ifttt_webhook(event, message_details):
+    print("entered the fun")
     data = {
         'value1': message_details['company_name'],
         'value2': "Upper: "+str(message_details['upper_circuit'])+" , Lower: "+str(message_details['lower_circuit']),
