@@ -45,6 +45,6 @@ def loop_companies(company_list):
         for i in company_list:
             print("Company Name: "+i)
             company_details = get_stock_details(i)
-            if check_upper_or_lower(company_details):
-                post_ifttt_webhook('notify_stock', company_details)
+            # if check_upper_or_lower(company_details):
+            post_ifttt_webhook('notify_stock', company_details)
         time.sleep(30)
