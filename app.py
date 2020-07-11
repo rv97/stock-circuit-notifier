@@ -28,7 +28,7 @@ def set_company_name():
 
 @app.route("/")
 def index():
-    return "<h1>Welcome to our server !!</h1>"
+    return "<h1>Welcome to our Stock Notifier !!</h1>"
 
 if __name__ == '__main__':
     app.run(debug=True)
