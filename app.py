@@ -26,5 +26,9 @@ def set_company_name():
         response_text['Message'] = "Company Added"
     return response_text, 201
 
+@app.route("/")
+def index():
+    print("Welcome to Stock Circuit Notifier")
+
 if __name__ == '__main__':
     app.run(debug=True)
