@@ -30,7 +30,9 @@ def post_ifttt_webhook(event, message_details):
         'value3': "Price: "+str(message_details['last_traded_price'])+" at: "+str(message_details['OccurredAt'])
     }
     ifttt_event_url = IFTTT_WEBHOOKS_URL.format(event)
-    requests.post(ifttt_event_url, json=data)
+    print("Before Post")
+    response = requests.post(ifttt_event_url, json=data)
+    print(response.status_code)
 
 def check_upper_or_lower(company_details):
     if company_details['last_traded_price'] != (company_details['upper_circuit'] or company_details['lower_circuit']):
