@@ -15,8 +15,7 @@ def set_company_name():
         abort(400)
     else:
         company_name = request.json['text']
-        if company_name not in company_list:
-            company_list.append(company_name)
+        company_list.append(company_name)
         global process
         if process == None:
             process = utils.proc_start(company_list)
