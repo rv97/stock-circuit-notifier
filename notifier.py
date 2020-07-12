@@ -44,7 +44,10 @@ def loop_companies(company_list):
     while True:
         for i in company_list:
             print("Company Name: "+i)
-            company_details = get_stock_details(i)
-            # if check_upper_or_lower(company_details):
-            post_ifttt_webhook('notify_stock', company_details)
+            try:
+                company_details = get_stock_details(i)
+                if check_upper_or_lower(company_details):
+                    post_ifttt_webhook('notify_stock', company_details)
+            except Exception as e:
+                print("Exception: ", e)
         time.sleep(30)
