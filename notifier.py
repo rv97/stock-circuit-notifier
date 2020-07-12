@@ -4,6 +4,7 @@ import requests
 import time
 from datetime import datetime, timedelta
 import logging
+from urllib.error import HTTPError
 
 IFTTT_WEBHOOKS_URL = 'https://maker.ifttt.com/trigger/{}/with/key/cDipGnE4T-XHuKQ5qG-fPf'
 nse = Nse()
@@ -48,6 +49,6 @@ def loop_companies(company_list):
                 company_details = get_stock_details(i)
                 if check_upper_or_lower(company_details):
                     post_ifttt_webhook('notify_stock', company_details)
-            except Exception as e:
+            except HTTPError as e:
                 print("Exception: ", e)
         time.sleep(30)
