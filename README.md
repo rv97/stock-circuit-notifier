@@ -19,8 +19,6 @@ Here we are using IFTTT applets to send notifications to telegram.
 - The URL will be something like this: https://maker.ifttt.com/trigger/{event}/with/key/{yourKey}
 - This will be used to send the notifications by giving the appropriate event name and key.
 
-### Getting API key from [AplhaVantage](https://www.alphavantage.co/)
-
-- Create a free account in this website.
-- Use the appropriate API based on you requirement with the help of the [documentation](https://www.alphavantage.co/documentation/)
+### API Usage
+- Send the company name to the /companyName endpoint to add it to the queue.
 
